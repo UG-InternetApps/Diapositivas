@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Manejo de proyectos con Git</title>
+
+    <meta name="description" content="Manejo de proyectos con Git">
+    <meta name="author" content="JuanCrg90">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Manejo de proyectos con Git</h1>
+          <p>
+          <small>By <a href="http://juancrg90.me">Juan Carlos Ruiz</a> / <a href="http://twitter.com/JuanCrg90">@JuanCrg90</a></small>
+          </p>
+        </section>
+
+        <section>
+          <section>
+            <h2>¿Qué es git?</h2>
+          </section>
+
+          <section>
+            <p>Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente</p>
+          </section>
+        </section>
+
+        <section>
+          <section><h2>Características</h2></section>
+
+          <section>
+            <ul>
+              <li class="fragment">Soporte al desarrollo no lineal. Las ramas en Git son muy baratas (crear una rama y fusionar posteriormente es trivial).</li>
+              <li class="fragment">Desarrollo distribuido. Cada desarrollador tiene una copia local del repositorio.</li>
+              <li class="fragment">Compatibilidad con protocolos y sistemas ya existentes: HTTP, FTP, rsync, o SSH.</li>
+              <li class="fragment">Autenticación criptográfica del historial. Una vez hecho un commit no es posible hacer cambios sin ser detectado.</li>
+            </ul>
+
+          </section>
+
+        </section>
+
+        <section>
+          <section>
+            <h2>Instalación</h2>
+          </section>
+
+          <section>
+            <ul>
+              <li class="fragment"><a href="https://git-scm.com/">Sitio web</a></li>
+              <li class="fragment">Ubuntu/Debian: $ sudo apt-get install git-core</li>
+              <li class="fragment">Fedora: $ sudo dnf -y install git</li>
+              <li class="fragment"> Archlinux $ sudo pacman -S git</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Configuración</h2>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+          ```
+          $ git --version
+          $ git config --global user.name "TU NOMBRE"
+          $ git config --global user.email "TU CORREO DE GITHUB"
+          $ git config --global user.username "TU USERNAME DE GITHUB"
+          $ git config --global color.ui true
+          $ git config --global --list
+
+          ```
+            </script>
+
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Áreas de trabajo</h2>
+          </section>
+          <section>
+            <figure>
+              <img src="images/areas.png" alt="areas">
+              <figcaption>Áreas de trabajo</figcaption>
+            </figure>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Inicializando el proyecto</h2>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            $ git init
+            ```
+            </script>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/init.png" alt="git init">
+              <figcaption>git init</figcaption>
+            </figure>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Estado del proyecto</h2>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            $ git status
+            ```
+            </script>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/status.png" alt="git status">
+              <figcaption>git status</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/working.png" alt="working area">
+              <figcaption>Working area</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/lifecycle.png" alt="life cycle">
+              <figcaption>Ciclo de vida</figcaption>
+            </figure>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            .gitignore
+            ```
+            </script>
+          </section>
+
+
+        </section>
+
+
+        <section>
+          <section>
+            <h2>Agregando archivos al staging area</h2>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            $ git add -A
+            ```
+            </script>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/add.png" alt="git add">
+              <figcaption>git add</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/staging.png" alt="staging area">
+              <figcaption>staging area</figcaption>
+            </figure>
+          </section>
+
+        </section>
+
+        <section>
+          <section>
+            <h2>Enviando los archivos al repositorio</h2>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            $ git commit 
+            ```
+            </script>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/commit1.png" alt="git commit">
+              <figcaption>git commit message</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/commit2.png" alt="git commit">
+              <figcaption>git commit done</figcaption>
+            </figure>
+          </section>
+
+
+          <section>
+            <figure>
+              <img src="images/repository.png" alt="repository">
+              <figcaption>Repository</figcaption>
+            </figure>
+          </section>
+
+        </section>
+
+
+        <section>
+          <section>
+            <h2>Historial de commits</h2>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            $ git log 
+            ```
+            </script>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/log.png" alt="git log">
+              <figcaption>git log</figcaption>
+            </figure>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Ver diferencias entre archivos</h2>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            $ git diff file 
+            ```
+            </script>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/diff1.png" alt="git diff">
+              <figcaption>git diff</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/diff2.png" alt="git diff">
+              <figcaption>git diff</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <p>También es posible aplicar el comando diff entre dos commits</p>
+          </section>
+ 
+        </section>
+
+
+        <section>
+          <section>
+            <h2>Ver commits anteriores</h2>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            $ git checkout <commit>
+            ```
+            </script>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/checkout1.png" alt="git checkout">
+              <figcaption>git checkout 9da5f33</figcaption>
+            </figure>
+          </section>
+
+
+          <section>
+            <figure>
+              <img src="images/checkout2.png" alt="git checkout">
+              <figcaption>git checkout master</figcaption>
+            </figure>
+          </section>
+
+        </section>
+
+        <section>
+
+          <section><h2>Deshaciendo Cambios</h2></section>
+
+          <section>
+            <p>Consideremos el caso donde ya hemos realizado algunos commits</p>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/commits.png" alt="commits">
+              <figcaption>commits</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/commits_log.png" alt="commits log">
+              <figcaption>Último log</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <p>Por alguna razón necesitamos volver al commit <br> "added new line"</p>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            $ git reset --hard <commit>
+            ```
+            </script>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/reset_hard.png" alt="reset hard">
+              <figcaption>git reset --hard 9badc04</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/reset_log.png" alt="commits log">
+              <figcaption>Log después del reset </figcaption>
+            </figure>
+          </section>
+
+
+           <section data-markdown>
+            <script type="text/template">
+            Tarea: Investigar que diferencia tienen los comandos:
+
+            ```
+            $ git reset --mixed <commit>
+            $ git reset --soft <commit>
+            ```
+            Fecha de entrega: 18 de febrero de 2016
+            </script>
+          </section>
+
+         
+
+        
+        </section>
+
+
+
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+// Full list of configuration options available at:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+  controls: true,
+  progress: true,
+  history: true,
+  center: true,
+
+  transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+  // Optional reveal.js plugins
+  dependencies: [
+  { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+  { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+  { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+  { src: 'plugin/zoom-js/zoom.js', async: true },
+  { src: 'plugin/notes/notes.js', async: true }
+  ]
+});
+
+    </script>
+
+  </body>
+</html>

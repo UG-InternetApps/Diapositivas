@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Control de versiones</title>
+
+    <meta name="description" content="Control de versiones">
+    <meta name="author" content="JuanCrg90">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Control de versiones</h1>
+          <p>
+          <small>By <a href="http://juancrg90.me">Juan Carlos Ruiz</a> / <a href="http://twitter.com/JuanCrg90">@JuanCrg90</a></small>
+          </p>
+        </section>
+        
+        <section>
+          <section>
+            <h1>Control de versiones</h1>
+          </section>
+          <section>
+            <p>Se llama control de versiones a la gestión de los diversos cambios que se realizan sobre los elementos de algún producto o una configuración del mismo.</p>
+          </section>
+          <section>
+            <p>Una versión, revisión o edición de un producto, es el estado en el que se encuentra dicho producto en un momento dado de su desarrollo o modificación.</p>
+          
+          </section>
+          <section>
+            <figure>
+              <img src="images/directorios.png" alt="">
+              <figcaption>Fig 1.1. Control de versiones casero</figcaption>
+            </figure>
+          </section>
+        </section>
+
+        <section>
+
+          <figure>
+            <img src="images/ejemplos.png" alt="">
+            <figcaption>Fig 1.2. Ejemplos de sistemas de manejo de versiones</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <section>
+            <h2>CVS</h2>
+          </section>
+          <section>
+            <figure>
+              <img src="images/CVS_Logo.png" alt="CVS_LOGO" height=300>
+              <figcaption>Fig 1.3. CVS Logo</figcaption>   
+            </figure>
+          </section>
+          <section>
+            <p><b>Concurrent Versioning System</b>, es una aplicación informática que implementa un sistema de control de versiones: mantiene el registro de todo el trabajo y los cambios en los ficheros (código fuente principalmente) que forman un proyecto (de programa) y permite que distintos desarrolladores (potencialmente situados a gran distancia) colaboren. CVS se ha hecho popular en el mundo del software libre. Sus desarrolladores difunden el sistema bajo la licencia GPL.
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Subversion
+            </h2>
+          </section>
+          <section>
+            <figure>
+              <img src="images/subversion_logo.png" alt="subversion_logo">
+              <figcaption>Fig 1.4. subversion Logo</figcaption>
+            </figure>
+          </section>
+          <section>
+            <p>Subversion (SVN) es un sistema de control de versiones diseñado específicamente para reemplazar al popular CVS. Es software libre bajo una licencia de tipo Apache/BSD y se le conoce también como svn por ser el nombre de la herramienta utilizada en la línea de comando.
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Mercurial</h2>
+          </section>
+          <section>
+          <figure>
+              <img src="images/mercurial_logo.png" alt="mercurial_logo">
+              <figcaption>Fig 1.5. Mercurial Logo</figcaption>
+            </figure>
+          </section>
+          <section>
+            <p>Mercurial es un sistema de control de versiones multiplataforma, para desarrolladores de software. Está implementado principalmente haciendo uso del lenguaje de programación Python, pero incluye una implementación binaria de diff escrita en C.</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Bazaar</h2>
+          </section>
+          <section>
+            <figure>
+              <img src="images/bazaar_logo.png" alt="bazaar_logo" height=400>
+              <figure>Fig 1.6 Bazaar Logo</figure>
+            </figure>
+          </section>
+          <section><p>Bazaar es un sistema de control de versiones distribuido patrocinado por Canonical Ltd., diseñado para facilitar la contribución en proyectos de software libre y opensource.
+            </p></section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Git</h2>
+          </section>
+          <section>
+            <figure>
+              <img src="images/git_logo.png" alt="git_logo">
+              <figcaption>1.7 Git logo</figcaption>
+            </figure>
+          </section>
+          <section>
+            <p>Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente.
+            </p>
+          </section>
+
+          <section>
+            <figure>
+              <img src="images/github.png" alt="github">
+              <figcaption>1.8. Github</figcaption>
+            </figure>
+          </section>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+// Full list of configuration options available at:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+  controls: true,
+  progress: true,
+  history: true,
+  center: true,
+
+  transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+  // Optional reveal.js plugins
+  dependencies: [
+  { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+  { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+  { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+  { src: 'plugin/zoom-js/zoom.js', async: true },
+  { src: 'plugin/notes/notes.js', async: true }
+  ]
+});
+
+    </script>
+
+  </body>
+</html>
